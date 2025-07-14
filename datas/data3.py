@@ -40,6 +40,12 @@ df_pivot = df_sum.pivot(index="Year", columns="Entity", values="Electricity from
 df_pivot = df_pivot.round(2).astype(float)
 df_pivot.to_json("europa_eolica.json", orient="columns")
 
+# --- Exportar JSON como objeto {pais: total_twh} ---
+top10_dict = top10_sumado.to_dict()
+
+with open("top10_wind_generation.json", "w") as f:
+    json.dump(top10_dict, f, indent=4)
+
 
 # --- Gráfico de barras (Top 10) ---
 plt.figure(figsize=(10, 6))
@@ -55,7 +61,7 @@ plt.tight_layout()
 plt.show()
 
 
-# --- Gráfico de área en Python (referencia) ---
+
 df_pivot.plot.area(figsize=(12, 6), cmap="viridis")
 plt.title("Generación total de electricidad eólica en Europa por país (TWh)")
 plt.xlabel("Año")

@@ -131,7 +131,7 @@ fetch("./datas/europa_barras.json")
   });
 
 // grafica 5 eolica 
-fetch("./datas/europa_eolica.json")
+fetch("./datas/top10_wind_generation.json")
     .then(res => res.json())
     .then(data => {
       const labels = Object.keys(data);
@@ -246,15 +246,22 @@ fetch("./datas/hydro_europa.json")
     const labels = Object.keys(data);
     const values = Object.values(data);
 
+    // Colores personalizados (tantos colores como labels)
+    const colores = [
+      '#4CAF50', '#2196F3', '#5aff07ff', '#0b323bff', '#00ffc8ff',
+      '#3F51B5', '#009688', '#1ee979ff', '#19c9c6ff', '#466145ff'
+    ];
+
     new Chart(document.getElementById("graficoHydro"), {
-      type: 'pie', // ← CAMBIO AQUÍ
+      type: 'pie',
       data: {
         labels: labels,
         datasets: [{
           label: "% Energía hidroeléctrica (último año)",
           data: values,
-          
-          
+          backgroundColor: colores.slice(0, labels.length),  // corta colores según cantidad de países
+          borderColor: '#ffffff',
+          borderWidth: 2
         }]
       },
       options: {
@@ -266,10 +273,10 @@ fetch("./datas/hydro_europa.json")
           legend: {
             position: 'right'
           }
-          
         },
         responsive: true
       }
     });
   });
+
 
