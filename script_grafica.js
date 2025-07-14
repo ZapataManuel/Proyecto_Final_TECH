@@ -238,3 +238,38 @@ fetch("./datas/europa_eolica.json")
           }
         });
       })
+
+// grafica 7 hidroeléctrica
+fetch("./datas/hydro_europa.json")
+  .then(res => res.json())
+  .then(data => {
+    const labels = Object.keys(data);
+    const values = Object.values(data);
+
+    new Chart(document.getElementById("graficoHydro"), {
+      type: 'pie', // ← CAMBIO AQUÍ
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "% Energía hidroeléctrica (último año)",
+          data: values,
+          
+          
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "Distribución % de energía hidroeléctrica por país (Europa)"
+          },
+          legend: {
+            position: 'right'
+          }
+          
+        },
+        responsive: true
+      }
+    });
+  });
+
