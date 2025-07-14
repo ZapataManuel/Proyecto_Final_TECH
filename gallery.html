@@ -87,13 +87,13 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- gallery -->
-      <div class="gallery">
+      <div id="gallery"  class="gallery">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>Our <span class="green">gallery</span></h2>
-                     <p>here are many variations of passages of Lorem Ipsum available, but the majority have suffer</p>
+                     <h2>Gráficas</h2>
+                     <p>A continuación, se presentan una serie de gráficas que analizan la relación entre la generación y el consumo de las principales fuentes de energía renovable. Estas representaciones permiten visualizar cómo varía la producción energética en función de la demanda, así como identificar patrones de comportamiento, posibles desbalances y niveles de aprovechamiento de cada tipo de recurso renovable, como la solar, hidroeléctrica y eólica</p>
                   </div>
                </div>
             </div>
@@ -101,67 +101,87 @@
                <div class="col-md-4 col-sm-6">
                   <div class="gallery_text">
                      <div class="galleryh3">
-                        <h3>Interior Design</h3>
-                        <p>of passages of Lorem <br>
-                           Ipsum available <br>
-                           , but the majority <br>
-                           have suffer
-                        </p>
+                        <h3>Energías Renovables <br> En Europa</h3>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-6">
+               <div class="col-md-8 col-sm-8">
                   <div class="gallery_img">
-                     <figure><img src="images/gallery1.jpg" alt="#"/></figure>
+                     <canvas id="graficoEuropaLinea"></canvas>
                   </div>
                </div>
-               <div class="col-md-4 col-sm-6">
+               <div class="col-md-8 col-sm-8">
                   <div class="gallery_img">
-                     <figure><img src="images/gallery2.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery3.jpg" alt="#"/></figure>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="gallery_img">
-                     <figure><img src="images/gallery4.jpg" alt="#"/></figure>
+                     <canvas id="graficoEuropaBarras"></canvas>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div class="gallery_text">
                      <div class="galleryh3">
-                        <h3>Interior Design</h3>
-                        <p>of passages of Lorem <br>
-                           Ipsum available <br>
-                           , but the majority <br>
-                           have suffer
-                        </p>
+                        <h3>Energías Renovables <br> En Europa</h3>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
                   <div class="gallery_text">
                      <div class="galleryh3">
-                        <h3>Interior Design</h3>
-                        <p>of passages of Lorem <br>
-                           Ipsum available <br>
-                           , but the majority <br>
-                           have suffer
-                        </p>
+                        <h3>Energía Solar</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-8">
+                  <div class="gallery_img">
+                       <canvas id="graficoTop15"></canvas>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-8">
+                  <div class="gallery_img">
+                     <canvas id="graficoPromedio"></canvas>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="gallery_text">
+                     <div class="galleryh3">
+                        <h3>Energía Solar</h3>
                      </div>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
+                  <div class="gallery_text">
+                     <div class="galleryh3">
+                        <h3>Energías Eólicas</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-8">
                   <div class="gallery_img">
-                     <figure><img src="images/gallery5.jpg" alt="#"/></figure>
+                     <canvas id="graficoEolica"></canvas>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-8">
+                  <div class="gallery_img">
+                     <canvas id="graficoAreaEolica"></canvas>
                   </div>
                </div>
                <div class="col-md-4 col-sm-6">
+                  <div class="gallery_text">
+                     <div class="galleryh3">
+                        <h3>Energía Eólica</h3>
+                     </div>
+                  </div>
+               </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="gallery_text">
+                     <div class="galleryh3">
+                        <h3>Energía Hidroeléctrica</h3>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-8 col-sm-8">
                   <div class="gallery_img">
-                     <figure><img src="images/gallery6.jpg" alt="#"/></figure>
+                     <div style="width: 500px; height: 500px; margin: auto;">
+                     <canvas id="graficoHydro"></canvas>
+                  </div>
                   </div>
                </div>
             </div>
@@ -244,5 +264,9 @@
       <!-- sidebar -->
       <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
+
+      <script src="libr/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="script_grafica.js"></script>
    </body>
 </html>
